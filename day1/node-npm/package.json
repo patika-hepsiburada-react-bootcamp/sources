@@ -1,0 +1,17 @@
+{
+  "name": "patika",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Mehmet Seven <mehmetseven0@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "node-fetch": "^3.0.0",
+    "slugify": "^1.6.0"
+  }
+}
