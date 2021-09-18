@@ -35,3 +35,21 @@
 // };
 
 // console.log(user);
+
+// let x = 10;
+// let y = x;
+
+// x = 15;
+
+// console.log(x);
+// console.log(y);
+
+const user1 = {
+  name: 'Ahmet',
+};
+
+const user2 = { ...user1, name: 'Mehmet' };
+// const user2 = Object.assign({}, user1, { name: 'Can' });
+
+console.log('user1', user1);
+console.log('user2', user2);
