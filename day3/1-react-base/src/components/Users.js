@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import UserListItem from './UserListItem';
 
-function Users({ title }) {
+function Users({ title, toggle, setToggle }) {
   const [users, setUsers] = useState([{ name: 'Initial Name' }]);
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(true);
@@ -30,15 +31,18 @@ function Users({ title }) {
   return (
     <div>
       <h1>{title}</h1>
-
       {loading && <div>Loading...</div>}
       <ul>
         {users.map((user, i) => (
-          <li key={i}>{user.name}</li>
+          <UserListItem key={i} user={user} />
         ))}
       </ul>
       <input value={name} onChange={(e) => setName(e.target.value)} />
       <button onClick={addNewUser}>Add</button>
+      <hr />
+      Toggle: {String(toggle)}
+      <button onClick={() => setToggle(!toggle)}>{toggle ? 'Hide' : 'Show'}</button>
+      <hr />
     </div>
   );
 }
