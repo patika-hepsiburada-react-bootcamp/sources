@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 function Counter() {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const [name, setName] = useState('');
 
   useEffect(() => {
@@ -11,7 +11,11 @@ function Counter() {
   useEffect(() => {
     console.log('Counter Component: Mount Edildi');
 
-    return () => console.log('Unmounted');
+    const interval = setInterval(() => {
+      setCount((c) => c + 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const increase = () => setCount((c) => c + 1);
