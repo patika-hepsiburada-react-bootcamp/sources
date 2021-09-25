@@ -1,16 +1,30 @@
 import './App.css';
-import Users from './components/Users';
-import Paragraph from './components/Paragraph';
+import { useState } from 'react';
+import Counter from './components/Counter';
+// import Form from './components/Form';
+// import Users from './components/Users';
+// import Paragraph from './components/Paragraph';
 
 function App() {
+  const [toggle, setToggle] = useState(true);
+
   return (
     <div className="App">
-      <Paragraph
+      {/* <Paragraph
         text={'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}
         numberOfLines={4}
-      />
+      /> */}
 
-      <Users title="Users" list={[{ name: 'Ayşe' }, { name: 'Fatma' }, { name: 'Murat' }]} />
+      {/* <Users title="Users" /> */}
+
+      {toggle ? <Counter /> : null}
+
+      <br />
+      <br />
+      <br />
+      <button onClick={() => setToggle(!toggle)}>{toggle ? 'Hide' : 'Show'}</button>
+
+      {/* <Form /> */}
     </div>
   );
 }
