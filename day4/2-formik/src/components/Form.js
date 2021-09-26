@@ -3,6 +3,9 @@ import { useFormik } from 'formik';
 
 import validationSchema from './validations';
 
+import Other from './Other';
+import Error from './Error';
+
 function Form() {
   const { values, handleSubmit, handleChange, setFieldValue, handleBlur, errors, touched } =
     useFormik({
@@ -36,7 +39,7 @@ function Form() {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            {errors.name && touched.name && <div className="error">{errors.name}</div>}
+            {errors.name && touched.name && <Error message={errors.name} />}
 
             <input
               placeholder="surname"
@@ -45,7 +48,7 @@ function Form() {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            {errors.surname && touched.surname && <div className="error">{errors.surname}</div>}
+            {errors.surname && touched.surname && <Error message={errors.surname} />}
 
             <input
               placeholder="email"
@@ -54,7 +57,7 @@ function Form() {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            {errors.email && touched.email && <div className="error">{errors.email}</div>}
+            {errors.email && touched.email && <Error message={errors.email} />}
 
             <input
               placeholder="password"
@@ -64,7 +67,7 @@ function Form() {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            {errors.password && touched.password && <div className="error">{errors.password}</div>}
+            {errors.password && touched.password && <Error message={errors.password} />}
 
             <input
               placeholder="password confirmation"
@@ -75,7 +78,7 @@ function Form() {
               onBlur={handleBlur}
             />
             {errors.passwordConfirm && touched.passwordConfirm && (
-              <div className="error">{errors.passwordConfirm}</div>
+              <Error message={errors.passwordConfirm} />
             )}
           </div>
 
@@ -144,7 +147,7 @@ function Form() {
 
           <button type="submit">Submit</button>
           <h2>Values</h2>
-          <pre>{JSON.stringify(values, null, 2)}</pre>
+          <Other formValues={values} />
 
           <h2>Errors</h2>
           <pre>{JSON.stringify(errors, null, 2)}</pre>
