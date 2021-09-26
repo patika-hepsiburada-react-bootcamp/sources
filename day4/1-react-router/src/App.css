@@ -1,0 +1,16 @@
+ul.menu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.menu li a {
+  padding: 5px;
+  text-decoration: none;
+}
+
+.content {
+  padding: 5px;
+  border: solid 1px #e1e1e1;
+  margin: 5px;
+}
