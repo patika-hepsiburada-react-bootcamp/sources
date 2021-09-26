@@ -2,11 +2,17 @@ ul.menu {
   display: flex;
   list-style-type: none;
   padding: 0;
+  margin: 10px 5px;
 }
 
 ul.menu li a {
   padding: 5px;
   text-decoration: none;
+}
+
+ul.menu li a.active {
+  background-color: black;
+  color: #fff;
 }
 
 .content {
