@@ -4,12 +4,15 @@ import Container from './components/Container';
 // contexts
 import { ThemeProvider } from './contexts/ThemeContext';
 import { CounterProvider } from './contexts/CounterContext';
+import { UsersProvider } from './contexts/UsersContext';
 
 function App() {
   return (
     <ThemeProvider>
       <CounterProvider>
-        <Container />
+        <UsersProvider>
+          <Container />
+        </UsersProvider>
       </CounterProvider>
     </ThemeProvider>
   );

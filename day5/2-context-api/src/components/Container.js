@@ -2,6 +2,7 @@ import Header from './Header';
 import Content from './Content';
 
 import { useTheme } from '../contexts/ThemeContext';
+import Users from './Users/Users';
 
 function Container() {
   const { theme } = useTheme();
@@ -17,6 +18,8 @@ function Container() {
       </Header>
 
       <Content />
+
+      <Users />
     </div>
   );
 }

@@ -14,5 +14,3 @@ export const CounterProvider = ({ children }) => {
 };
 
 export const useCounter = () => useContext(CounterContext);
-
-export default CounterContext;
