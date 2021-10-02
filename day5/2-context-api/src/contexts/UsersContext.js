@@ -13,8 +13,11 @@ export const UsersProvider = ({ children }) => {
   const addUser = (data) => setUsers((u) => [...u, { ...data, id: nanoid() }]);
 
   const removeUser = (id) => {
-    const filtered = users.filter((user) => user.id !== id);
-    setUsers(filtered);
+    const data = users;
+    const index = data.findIndex((user) => user.id === id);
+    data.splice(index, 1);
+
+    setUsers([...data]);
   };
 
   const removeAll = () => setUsers([]);

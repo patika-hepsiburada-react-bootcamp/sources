@@ -4,7 +4,6 @@ function ListItem({ item }) {
   const { removeUser } = useUsers();
 
   const handleRemove = (id) => {
-    console.log(id);
     removeUser(id);
   };
 
