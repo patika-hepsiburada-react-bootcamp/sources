@@ -9,23 +9,16 @@ app.get('/', (req, res) => {
   res.end('realtime colors app');
 });
 
-let activeColor = '#FFFFFF';
-
 io.on('connection', (socket) => {
   console.log('a user connected');
 
-  socket.emit('new-color', activeColor);
-
-  socket.on('new-color', (color) => {
-    console.log('New Color:', color);
-
-    io.emit('new-color', color);
-    activeColor = color;
+  socket.on('new-message', (message) => {
+    console.log('New message:', message);
+    socket.broadcast.emit('new-message', message);
   });
 
   socket.on('disconnect', () => console.log('a user disconnected'));
 });
-
 
 server.listen(3000, () => {
   console.log('listening on *:3000');
