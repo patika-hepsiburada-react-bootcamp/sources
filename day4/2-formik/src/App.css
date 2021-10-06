@@ -1,0 +1,29 @@
+.form {
+  margin: 5px;
+}
+
+.form input {
+  padding: 5px;
+  font-size: 18px;
+}
+
+.form div > * {
+  margin: 5px 0;
+}
+
+.form button {
+  display: block;
+}
+
+.theme button {
+  display: inline-block;
+}
+
+.inputs > input {
+  display: block;
+}
+
+.error {
+  color: red;
+  font-size: 11px;
+}

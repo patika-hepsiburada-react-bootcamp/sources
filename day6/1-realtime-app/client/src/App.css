@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .controls > * {
+  display: block;
+  margin: 10px 0;
+}
+
+.container .controls > button {
+  padding: 7px;
+}
