@@ -9,7 +9,7 @@ function Footer({ usernames }) {
       <div>{usernames}</div>
     </div>
   );
-}se
+}
 
 Footer.propTypes = {
   usernames: PropTypes.string,
