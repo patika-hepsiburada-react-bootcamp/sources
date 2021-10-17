@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Footer({ usernames }) {
-  console.log('Footer: Re-render');
   return (
     <div>
       <hr />
@@ -9,6 +9,10 @@ function Footer({ usernames }) {
       <div>{usernames}</div>
     </div>
   );
-}
+}se
+
+Footer.propTypes = {
+  usernames: PropTypes.string,
+};
 
 export default React.memo(Footer);
