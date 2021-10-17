@@ -15,7 +15,7 @@ function Container() {
       console.log(message);
       setChat((prev) => [...prev, { message }]);
     });
-  }, []);
+  }, [setChat]);
 
   return (
     <div className="container">
