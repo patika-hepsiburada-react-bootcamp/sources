@@ -24,9 +24,17 @@ function Item({ item }) {
     alert('Cancelled');
   };
 
+  const handleRemove = () => {
+    if (!window.confirm('Emin misin?')) {
+      return false;
+    }
+
+    dispatch(removeItem(item.id));
+  };
+
   return (
     <div className="list-item">
-      <button onClick={() => dispatch(removeItem(item.id))}>Sil</button>
+      <button onClick={handleRemove}>Sil</button>
 
       <EasyEdit
         type={Types.TEXT}
