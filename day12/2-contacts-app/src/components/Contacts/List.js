@@ -2,12 +2,10 @@ import React from 'react';
 
 import Item from './Item';
 import { useSelector } from 'react-redux';
-import { itemsSelector } from 'redux/slices/contacts';
+import { contactSelectors } from 'redux/slices/contacts';
 
 function List() {
-  const items = useSelector(itemsSelector);
-
-  console.log(items);
+  const items = useSelector(contactSelectors.selectAll);
 
   return (
     <div className="contacts-list">

@@ -1,33 +1,16 @@
-import { createSlice, nanoid } from '@reduxjs/toolkit';
+import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+
+export const contactAdapter = createEntityAdapter();
+const initialState = contactAdapter.getInitialState();
+
+export const contactSelectors = contactAdapter.getSelectors((state) => state.contacts);
 
 export const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: {
-    items: [
-      {
-        id: '1',
-        name: 'Ahmet',
-      },
-      {
-        id: '2',
-        name: 'Ayşe',
-      },
-    ],
-  },
+  initialState: initialState,
   reducers: {
-    addItem: {
-      reducer: (state, action) => {
-        state.items.push(action.payload);
-      },
-      prepare: (payload) => {
-        return {
-          payload: {
-            id: nanoid(),
-            ...payload,
-          },
-        };
-      },
-    },
+    addItem: contactAdapter.addOne,
+    addItems: contactAdapter.addMany,
     removeItem: (state, action) => {
       const index = state.items.findIndex((item) => item.id === action.payload);
 
@@ -45,8 +28,6 @@ export const contactsSlice = createSlice({
   },
 });
 
-export const itemsSelector = (state) => state.contacts.items;
-
-export const { addItem, removeItem, updateItem } = contactsSlice.actions;
+export const { addItem, addItems, removeItem, updateItem } = contactsSlice.actions;
 
 export default contactsSlice.reducer;
