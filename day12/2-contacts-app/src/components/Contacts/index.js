@@ -2,6 +2,7 @@ import React from 'react';
 import Form from './Form';
 import AnotherForm from './AnotherForm';
 import List from './List';
+import AnotherList from './AnotherList';
 
 function Contacts() {
   return (
@@ -10,6 +11,7 @@ function Contacts() {
 
       <div className="content">
         <List />
+        <AnotherList />
         <Form />
         <AnotherForm />
       </div>
