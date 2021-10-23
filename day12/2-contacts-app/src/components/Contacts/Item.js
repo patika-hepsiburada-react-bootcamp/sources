@@ -1,15 +1,15 @@
 import React from 'react';
 
 import { useDispatch } from 'react-redux';
-import { removeItem } from 'redux/slices/contacts';
+import { removeItem, updateItem } from 'redux/slices/contacts';
 
 import EasyEdit, { Types } from 'react-easy-edit';
 
 function Item({ item }) {
   const dispatch = useDispatch();
 
-  const save = (value) => {
-    alert(value);
+  const save = (id, val) => {
+    dispatch(updateItem({ id, data: { id, name: val } }));
   };
 
   const cancel = () => {
@@ -22,7 +22,7 @@ function Item({ item }) {
 
       <EasyEdit
         type={Types.TEXT}
-        onSave={save}
+        onSave={(val) => save(item.id, val)}
         onCancel={cancel}
         saveButtonLabel="Save"
         cancelButtonLabel="Cancel"

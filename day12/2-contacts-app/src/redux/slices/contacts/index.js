@@ -35,11 +35,18 @@ export const contactsSlice = createSlice({
         state.items.splice(index, 1);
       }
     },
+    updateItem: (state, action) => {
+      const index = state.items.findIndex((item) => item.id === action.payload.id);
+
+      if (index > -1) {
+        state.items[index] = action.payload.data;
+      }
+    },
   },
 });
 
 export const itemsSelector = (state) => state.contacts.items;
 
-export const { addItem, removeItem } = contactsSlice.actions;
+export const { addItem, removeItem, updateItem } = contactsSlice.actions;
 
 export default contactsSlice.reducer;
