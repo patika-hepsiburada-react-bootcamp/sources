@@ -28,11 +28,18 @@ export const contactsSlice = createSlice({
         };
       },
     },
+    removeItem: (state, action) => {
+      const index = state.items.findIndex((item) => item.id === action.payload);
+
+      if (index > -1) {
+        state.items.splice(index, 1);
+      }
+    },
   },
 });
 
 export const itemsSelector = (state) => state.contacts.items;
 
-export const { addItem } = contactsSlice.actions;
+export const { addItem, removeItem } = contactsSlice.actions;
 
 export default contactsSlice.reducer;

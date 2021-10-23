@@ -16,6 +16,19 @@
   display: flex;
 }
 
-.content > div {
+.content > div:first-child {
+  flex: 2;
+}
+
+.content > div:first-child {
   flex: 1;
+}
+
+.list-item {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.list-item > button {
+  margin-right: 6px;
 }
