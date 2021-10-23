@@ -9,7 +9,15 @@ function Item({ item }) {
   const dispatch = useDispatch();
 
   const save = (id, val) => {
-    dispatch(updateItem({ id, data: { id, name: val } }));
+    dispatch(
+      updateItem({
+        id,
+        changes: {
+          id,
+          name: val,
+        },
+      }),
+    );
   };
 
   const cancel = () => {

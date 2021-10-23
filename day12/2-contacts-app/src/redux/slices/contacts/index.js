@@ -11,23 +11,12 @@ export const contactsSlice = createSlice({
   reducers: {
     addItem: contactAdapter.addOne,
     addItems: contactAdapter.addMany,
-    removeItem: (state, action) => {
-      const index = state.items.findIndex((item) => item.id === action.payload);
-
-      if (index > -1) {
-        state.items.splice(index, 1);
-      }
-    },
-    updateItem: (state, action) => {
-      const index = state.items.findIndex((item) => item.id === action.payload.id);
-
-      if (index > -1) {
-        state.items[index] = action.payload.data;
-      }
-    },
+    removeItem: contactAdapter.removeOne,
+    removeAllItems: contactAdapter.removeAll,
+    updateItem: contactAdapter.updateOne,
   },
 });
 
-export const { addItem, addItems, removeItem, updateItem } = contactsSlice.actions;
+export const { addItem, addItems, removeItem, updateItem, removeAllItems } = contactsSlice.actions;
 
 export default contactsSlice.reducer;
