@@ -1,0 +1,21 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 650px;
+  border: solid 2px #000000;
+  padding: 20px;
+  min-height: 400px;
+}
+
+.content {
+  display: flex;
+}
+
+.content > div {
+  flex: 1;
+}
