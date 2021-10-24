@@ -54,7 +54,7 @@ router.put('/:id', (req, res, next) => {
   const updated_data = { ...user, ...data };
   users[index] = updated_data;
 
-  res.json(users);
+  res.json(users[index]);
 });
 
 router.delete('/:id', (req, res, next) => {
@@ -65,9 +65,10 @@ router.delete('/:id', (req, res, next) => {
     return next({ message: 'User not found!' });
   }
 
+  const deleted_user = users[index];
   users.splice(index, 1);
 
-  res.json(users);
+  res.json(deleted_user);
 });
 
 module.exports = router;
