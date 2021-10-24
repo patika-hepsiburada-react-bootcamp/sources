@@ -1,12 +1,6 @@
 const express = require('express');
 const { nanoid } = require('nanoid');
 
-/*
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis, voluptates. Corporis saepe recusandae laudantium asperiores libero, aut vitae! Ad fuga quas molestiae molestias optio perferendis, quasi unde facilis sit accusantium.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sit at est. Ratione, vel, placeat magnam sequi iure a nisi eius quo molestiae accusantium sapiente ipsam aliquid ad temporibus sunt.
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam modi beatae qui nisi sit impedit repudiandae quas quos maxime id consequatur sequi repellat cum tenetur, autem tempore adipisci, earum facilis?
-*/
-
 const router = express.Router();
 
 const users = [
